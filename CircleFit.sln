@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircleFit", "CircleFit.csproj", "{88A044FD-EC03-47AC-93C7-959F6C64DF6C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{270E8480-8124-412B-B64A-CB8924D0F161}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88A044FD-EC03-47AC-93C7-959F6C64DF6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88A044FD-EC03-47AC-93C7-959F6C64DF6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88A044FD-EC03-47AC-93C7-959F6C64DF6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88A044FD-EC03-47AC-93C7-959F6C64DF6C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5BC71C5B-1193-4F52-B608-DF0FCAF89471}
+	EndGlobalSection
+EndGlobal
