@@ -15,6 +15,7 @@
 
 
 using System;
+using System.Linq;
 
 namespace CircleFit
 {
@@ -29,6 +30,7 @@ namespace CircleFit
         public double[] Residuals { get; private set; }
         public double[] Phi { get; private set; }
         public DataPod[] Pod { get; private set; }
+        public double RangeResiduals => Residuals.Max() - Residuals.Min();
 
         public CircleFitter(Point2D[] points)
         {

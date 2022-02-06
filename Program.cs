@@ -40,10 +40,11 @@ namespace CircleFit
 
             using (StreamWriter writer = new StreamWriter(outputFilename, false))
             {
-                writer.WriteLine($"Center x: {fitter.FittedCircle.Center.X:F10} m");
-                writer.WriteLine($"Center y: {fitter.FittedCircle.Center.Y:F10} m");
-                writer.WriteLine($"Radius:   {fitter.FittedCircle.Radius:F10} m");
-                writer.WriteLine($"Points:   {fitter.NumberPoints}");
+                writer.WriteLine($"Center x:       {fitter.FittedCircle.Center.X:F10} m");
+                writer.WriteLine($"Center y:       {fitter.FittedCircle.Center.Y:F10} m");
+                writer.WriteLine($"Radius:         {fitter.FittedCircle.Radius:F10} m");
+                writer.WriteLine($"Points:         {fitter.NumberPoints}");
+                writer.WriteLine($"RangeResiduals: {fitter.RangeResiduals*1e6:F3} µm");
                 foreach (var c in GetComments(inputFilename))
                 {
                     writer.WriteLine(c);
