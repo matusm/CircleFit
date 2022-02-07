@@ -25,7 +25,7 @@ namespace CircleFit
 
         public override string ToString()
         {
-            return $"Circle2D[{Center} , {Radius}]";
+            return $"[Circle2D: Center={Center} Radius={Radius}]";
         }
     }
 }

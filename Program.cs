@@ -83,7 +83,6 @@ namespace CircleFit
             return comments;
         }
 
-
         private static Point2D[] GetData(string filename)
         {
             List<Point2D> data = new List<Point2D>();
