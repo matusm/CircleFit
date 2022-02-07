@@ -57,10 +57,11 @@ namespace CircleFit
                 }
             }
 
-            Console.WriteLine($"Center x: {fitter.FittedCircle.Center.X * 1000:F6} mm");
-            Console.WriteLine($"Center y: {fitter.FittedCircle.Center.Y * 1000:F6} mm");
-            Console.WriteLine($"Radius:   {fitter.FittedCircle.Radius * 1000:F6} mm");
-            Console.WriteLine($"# Points: {fitter.NumberPoints}");
+            Console.WriteLine($"Center x:       {fitter.FittedCircle.Center.X * 1000:F6} mm");
+            Console.WriteLine($"Center y:       {fitter.FittedCircle.Center.Y * 1000:F6} mm");
+            Console.WriteLine($"Radius:         {fitter.FittedCircle.Radius * 1000:F6} mm");
+            Console.WriteLine($"# Points:       {fitter.NumberPoints}");
+            Console.WriteLine($"RangeResiduals: {fitter.RangeResiduals * 1e6:F3} µm");
             Console.WriteLine();
         }
 
