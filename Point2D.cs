@@ -20,19 +20,10 @@ namespace CircleFit
             return Math.Sqrt(dx * dx + dy * dy);
         }
 
-        public static Point2D operator - (Point2D p1, Point2D p2)
-        {
-            return new Point2D(p1.X - p2.X, p1.Y - p2.Y);
-        }
+        public static Point2D operator -(Point2D p1, Point2D p2) => new Point2D(p1.X - p2.X, p1.Y - p2.Y);
 
-        public static Point2D operator * (Point2D p1, double k)
-        {
-            return new Point2D(p1.X * k, p1.Y * k);
-        }
+        public static Point2D operator *(Point2D p1, double k) => new Point2D(p1.X * k, p1.Y * k);
 
-        public override string ToString()
-        {
-            return $"[Point2D: X={X} Y={Y}]";
-        }
+        public override string ToString() => $"[Point2D: X={X} Y={Y}]";
     }
 }

@@ -90,8 +90,8 @@ namespace CircleFit
         private Circle2D FitCircleToPoints()
         {
             double radius;
-            var cog = CenterOfGravity();
-            var tempCenter = cog;
+            Point2D cog = CenterOfGravity();
+            Point2D tempCenter = cog;
             while (true)
             {
                 Point2D newCenter = Iterate(tempCenter);
@@ -107,7 +107,7 @@ namespace CircleFit
                 double C = 0;
                 double S = 0;
                 double L = 0;
-                foreach (var p in Points)
+                foreach (Point2D p in Points)
                 {
                     double distance = p.Distance(temp);
                     C += (p.X - temp.X) / distance;

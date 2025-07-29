@@ -19,19 +19,10 @@ namespace CircleFit
             Residual = res;
         }
 
-        public string ToCsvString()
-        {
-            return $"{Index,4} , {RawPoint.X:F10} , {RawPoint.Y:F10} , {NormalizedPoint.X,9:F6} , {NormalizedPoint.Y,9:F6} , {Phi,7:F2} , {Residual * 1e6,6:F3}";
-        }
+        public string ToCsvString() => $"{Index,4} , {RawPoint.X:F10} , {RawPoint.Y:F10} , {NormalizedPoint.X,9:F6} , {NormalizedPoint.Y,9:F6} , {Phi,7:F2} , {Residual * 1e6,6:F3}";
 
-        public override string ToString()
-        {
-            return $"[DataPod: Index={Index} RawPoint={RawPoint}]";
-        }
+        public override string ToString() => $"[DataPod: Index={Index} RawPoint={RawPoint}]";
 
-        public int CompareTo(DataPod other)
-        {
-            return Phi.CompareTo(other.Phi);
-        }
+        public int CompareTo(DataPod other) => Phi.CompareTo(other.Phi);
     }
 }

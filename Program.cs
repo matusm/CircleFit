@@ -9,7 +9,6 @@ namespace CircleFit
     {
         static void Main(string[] args)
         {
-
             CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
 
             #region command line interface
@@ -23,7 +22,6 @@ namespace CircleFit
             if (args.Length >= 1)
             {
                 inputFilename = args[0];
-
                 outputFilename = Path.ChangeExtension(inputFilename, ".prn");
             }
             if (args.Length == 2)
@@ -45,13 +43,13 @@ namespace CircleFit
                 writer.WriteLine($"Radius:         {fitter.FittedCircle.Radius:F10} m");
                 writer.WriteLine($"Points:         {fitter.NumberPoints}");
                 writer.WriteLine($"RangeResiduals: {fitter.RangeResiduals*1e6:F3} µm");
-                foreach (var c in GetComments(inputFilename))
+                foreach (string c in GetComments(inputFilename))
                 {
                     writer.WriteLine(c);
                 }
                 writer.WriteLine("index , x_global , y_global , x_N , y_N , phi , residual");
                 writer.WriteLine("1 , m , m , 1 , 1 , ° , µm");
-                foreach (var pod in fitter.Pod)
+                foreach (DataPod pod in fitter.Pod)
                 {
                     writer.WriteLine(pod.ToCsvString());
                 }
@@ -72,8 +70,8 @@ namespace CircleFit
             {
                 while (!reader.EndOfStream)
                 {
-                    var line = reader.ReadLine();
-                    var p = PointParse(line);
+                    string line = reader.ReadLine();
+                    Point2D p = PointParse(line);
                     if (p == null)
                     {
                         comments.Add($">>> {line.Trim()}");
@@ -91,8 +89,8 @@ namespace CircleFit
             {
                 while (!reader.EndOfStream)
                 {
-                    var line = reader.ReadLine();
-                    var p = PointParse(line);
+                    string line = reader.ReadLine();
+                    Point2D p = PointParse(line);
                     if (p != null)
                     {
                         data.Add(p);
@@ -108,7 +106,7 @@ namespace CircleFit
 
         private static Point2D PointParse(string line)
         {
-            var tokens = line.Split(',');
+            string[] tokens = line.Split(',');
             if (tokens.Length == 2)
             {
                 double x = MyParse(tokens[0]);
@@ -121,13 +119,7 @@ namespace CircleFit
             return null;
         }
 
-        private static double MyParse(string token)
-        {
-            if (double.TryParse(token, out double value))
-                return value;
-            else
-                return double.NaN;
-        }
+        private static double MyParse(string token) => double.TryParse(token, out double value) ? value : double.NaN;
 
     }
 }
