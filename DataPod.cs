@@ -23,6 +23,9 @@ namespace CircleFit
 
         public override string ToString() => $"[DataPod: Index={Index} RawPoint={RawPoint}]";
 
-        public int CompareTo(DataPod other) => Phi.CompareTo(other.Phi);
+        public int CompareTo(DataPod other) => Index.CompareTo(other.Index);
+
+        // use this comparator when you want sort according to phi (for residual plots)
+        //public int CompareTo(DataPod other) => Phi.CompareTo(other.Phi);
     }
 }
