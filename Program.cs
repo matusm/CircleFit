@@ -74,7 +74,9 @@ namespace CircleFit
                     Point2D p = PointParse(line);
                     if (p == null)
                     {
-                        comments.Add($">>> {line.Trim()}");
+                        string comment = line.Trim();
+                        if (!string.IsNullOrWhiteSpace(comment)) 
+                            comments.Add($">>> {comment}");
                     }
                 }
             }
